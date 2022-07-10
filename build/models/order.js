@@ -28,6 +28,7 @@ class OrdersModel {
             return response.rows[0];
         }
         catch (error) {
+            console.log(error);
             throw new Error("Database error connection encountered. Please try again later.😴");
         }
     }

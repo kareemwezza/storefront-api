@@ -27,8 +27,8 @@ const getCurrent = async (req, res, next) => {
     try {
         const user = (0, decodeUser_1.default)(req);
         const orders = await orderModel.getCurrentOrders(user.id, status);
-        res.status(201).json({
-            status: 201,
+        res.status(200).json({
+            status: 200,
             data: orders,
             message: "Current Orders Have been retrieved successfully 😎.",
         });

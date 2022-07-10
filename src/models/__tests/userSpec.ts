@@ -27,8 +27,8 @@ describe("User Model", () => {
     const user: User = {
       first_name: "Kareem",
       last_name: "Fouad",
-      email: "kareemfouad27@gmail.com",
-      password: "Wezza999",
+      email: "kareemfouad@gmail.com",
+      password: "123456",
     };
 
     beforeAll(async () => {

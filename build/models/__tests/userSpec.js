@@ -25,8 +25,8 @@ describe("User Model", () => {
         const user = {
             first_name: "Kareem",
             last_name: "Fouad",
-            email: "kareemfouad27@gmail.com",
-            password: "Wezza999",
+            email: "kareemfouad@gmail.com",
+            password: "123456",
         };
         beforeAll(async () => {
             const newuser = await userModel.create(user);

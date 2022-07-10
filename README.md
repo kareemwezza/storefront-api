@@ -24,9 +24,6 @@ POSTGRES_DB_TEST=udacitystore_test
 POSTGRES_PORT=5432
 POSTGRES_USERNAME=wezza
 POSTGRES_PASSWORD=123456
-
-# keys for security
-
 PEPPER=wezza@wezza999
 SALT_ROUNDS=10
 TOKEN_SECRET=wezza@wezza999$secretmytoken

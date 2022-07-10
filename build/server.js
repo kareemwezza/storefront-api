@@ -30,3 +30,4 @@ app.use(errorHandler_1.default);
 app.listen(PORT, function () {
     console.log(`starting app on: ${address}`);
 });
+exports.default = app;

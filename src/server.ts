@@ -36,3 +36,5 @@ app.use(errorHandler);
 app.listen(PORT, function () {
   console.log(`starting app on: ${address}`);
 });
+
+export default app;

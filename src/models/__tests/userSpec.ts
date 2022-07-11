@@ -43,12 +43,42 @@ describe("User Model", () => {
       connection.release();
     });
 
-    it("should have authenticate users method", async () => {
-      const auth = await userModel.authanticate(
-        user.email,
-        user.password as string
+    it("Create New User method", async () => {
+      const newUser = await userModel.create({
+        first_name: "new",
+        last_name: "user",
+        email: "newuser@gmail.com",
+        password: "123456",
+      });
+      expect(newUser).toEqual({
+        id: newUser.id,
+        first_name: "new",
+        last_name: "user",
+        email: "newuser@gmail.com",
+      });
+    });
+
+    it("get single user from database", async () => {
+      const fetchedUser = await userModel.show(user.id as number);
+      expect(fetchedUser.email).toEqual(user.email);
+    });
+
+    it("index all users in DB", async () => {
+      const allUsers = await userModel.index();
+      expect(allUsers).toContain({
+        first_name: "Kareem",
+        last_name: "Fouad",
+        email: "kareemfouad@gmail.com",
+        id: user.id,
+      });
+    });
+
+    it("Authenticate user Method", async () => {
+      const authuser = await userModel.authanticate(
+        user?.email,
+        user?.password as string
       );
-      expect(auth?.email).toEqual(user.email);
+      expect(authuser).not.toBeNull();
     });
   });
 });

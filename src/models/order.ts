@@ -8,7 +8,7 @@ export default class OrdersModel {
   ): Promise<Order[]> {
     try {
       const connection = await db.connect();
-      const sql = "SELECT * from Orders WHERE id=($1) AND status=($2)";
+      const sql = "SELECT * from Orders WHERE user_id=($1) AND status=($2)";
       const response = await connection.query(sql, [userId, status]);
       connection.release();
       return response.rows;

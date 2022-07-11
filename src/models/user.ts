@@ -20,7 +20,7 @@ export default class UserModel {
     }
   }
 
-  async show(id: string): Promise<User> {
+  async show(id: number): Promise<User> {
     try {
       const connection = await db.connect();
       const sql =

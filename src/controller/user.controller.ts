@@ -42,7 +42,7 @@ export const index = async (
 
 export const show = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const userId = req.params.id as unknown as string;
+    const userId = req.params.id as unknown as number;
     const user = await userModel.show(userId);
     return res.status(200).json({
       status: 200,

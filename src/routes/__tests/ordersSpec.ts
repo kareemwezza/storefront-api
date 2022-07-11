@@ -1,12 +1,40 @@
 import supertest from "supertest";
+import UserModel from "../../models/user";
 
 import app from "../../server";
-const token =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RfbmFtZSI6IkthcmVlbSIsImxhc3RfbmFtZSI6IldlenphIiwiZW1haWwiOiJrYXJlZW1mb3VhZDI3QGdtYWlsLmNvbSIsImlhdCI6MTY1NzE1Mzg1OH0.HyeGlFNkgWX5DTHC_OGTfjWvGcnCI_2FfftwP_k_ZE4";
+import { User } from "../../types";
+import db from "../../database";
+let token: string;
 
 const request = supertest(app);
 
+const userModel = new UserModel();
+
 describe("/orders api endpoint testing", () => {
+  const user: User = {
+    first_name: "Test1",
+    last_name: "Last",
+    email: "test@test.com",
+    password: "123456",
+  };
+
+  beforeAll(async () => {
+    const createdUser = await userModel.create(user);
+    user.id = createdUser.id;
+    const response = await request
+      .post("/api/v1/users/authenticate")
+      .send({ email: user.email, password: user.password });
+    token = response.body.token;
+  });
+
+  afterAll(async () => {
+    const connection = await db.connect();
+    const sql = `DELETE FROM Orders;
+    DELETE FROM Users;`;
+    await connection.query(sql);
+    connection.release();
+  });
+
   it("create new order to /orders api", async () => {
     const response = await request
       .post("/api/v1/orders")

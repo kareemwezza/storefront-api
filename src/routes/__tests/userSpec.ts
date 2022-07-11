@@ -11,7 +11,7 @@ const request = supertest(app);
 
 const userModel = new UserModel();
 
-fdescribe("/users api endpoint testing", () => {
+describe("/users api endpoint testing", () => {
   const user: User = {
     first_name: "Test1",
     last_name: "Last",

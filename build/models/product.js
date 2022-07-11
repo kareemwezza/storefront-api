@@ -59,6 +59,5 @@ class ProductModel {
             throw new Error("Database error connection encountered. Please try again later.😴");
         }
     }
-    async getPopular() { }
 }
 exports.default = ProductModel;

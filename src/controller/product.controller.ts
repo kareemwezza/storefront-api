@@ -70,20 +70,3 @@ export const getByCategory = async (
     next(error);
   }
 };
-
-export const getPopular = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
-  try {
-    const products = await productModel.getPopular();
-    res.status(200).json({
-      status: 200,
-      data: products,
-      message: `Top 5 Popular Products have been retrieved successfully 😋.`,
-    });
-  } catch (error) {
-    next(error);
-  }
-};

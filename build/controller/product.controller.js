@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getPopular = exports.getByCategory = exports.getById = exports.index = exports.create = void 0;
+exports.getByCategory = exports.getById = exports.index = exports.create = void 0;
 const product_1 = __importDefault(require("../models/product"));
 const productModel = new product_1.default();
 const create = async (req, res, next) => {
@@ -62,17 +62,3 @@ const getByCategory = async (req, res, next) => {
     }
 };
 exports.getByCategory = getByCategory;
-const getPopular = async (req, res, next) => {
-    try {
-        const products = await productModel.getPopular();
-        res.status(200).json({
-            status: 200,
-            data: products,
-            message: `Top 5 Popular Products have been retrieved successfully 😋.`,
-        });
-    }
-    catch (error) {
-        next(error);
-    }
-};
-exports.getPopular = getPopular;

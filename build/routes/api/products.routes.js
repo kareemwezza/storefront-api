@@ -31,7 +31,6 @@ const controllers = __importStar(require("../../controller/product.controller"))
 const authenticate_1 = __importDefault(require("../../middlewares/authenticate"));
 const router = (0, express_1.Router)();
 router.get("/", controllers.index);
-router.get("/popular", controllers.getPopular);
 router.get("/:productId", controllers.getById);
 router.post("/", authenticate_1.default, controllers.create);
 router.post("/category", controllers.getByCategory);

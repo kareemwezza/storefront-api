@@ -20,11 +20,8 @@ describe("Product Model", () => {
         it("should have a get Product by category method", () => {
             expect(productModel.getByCategory).toBeDefined();
         });
-        it("should have a get top 5 popular Products method", () => {
-            expect(productModel.getPopular).toBeDefined();
-        });
     });
-    fdescribe("Check Products methods functionality", () => {
+    describe("Check Products methods functionality", () => {
         const product = {
             name: "Product1",
             price: 100,

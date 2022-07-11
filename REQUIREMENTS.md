@@ -21,7 +21,6 @@ All endpoints of this API will be exposed on `http://localhost:3000/api/v1/`.
 - Get information about single Product `GET /products/:productId`.
 - Create a new Product to the database `POST /products`. your req body must have [name, price, category]. **[Authorization required]**
 - Get All products by category `POST /products/category` your req body must have[category].
-- Get Top 5 Popular Products `GET /products/popular`.
 
 #### Orders
 

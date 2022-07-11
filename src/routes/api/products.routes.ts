@@ -6,8 +6,6 @@ const router = Router();
 
 router.get("/", controllers.index);
 
-router.get("/popular", controllers.getPopular);
-
 router.get("/:productId", controllers.getById);
 
 router.post("/", authenticate, controllers.create);

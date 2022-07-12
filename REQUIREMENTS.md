@@ -27,27 +27,27 @@ All endpoints of this API will be exposed on `http://localhost:3000/api/v1/`.
 - Create a new Order to the database `POST /orders`. **[Authorization required]**
 - Get All Orders from the database to specific user `GET /orders/current`. you have to query the status of the order [status="active" | "complete"] **[Authorization required]**
 
-## Data Shapes
+## Project Schema
 
-#### Product
+#### Products Table
 
-- id >> INT PK
-- name >> VARCHAR 255
-- price >> INT
-- [OPTIONAL] category >> VARCHAR 100
+- **COLUMN** id >> INT PK
+- **COLUMN** name >> VARCHAR 255
+- **COLUMN** price >> INT
+- **COLUMN** [OPTIONAL] category >> VARCHAR 100
 
-#### User
+#### Users Table
 
-- id >> INT PK
-- firstName >> VARCHAR 50
-- lastName >> VARCHAR 50
-- email >> VARCHAR 100 NOT NULL UNIQUE
-- password >> VARCHAR 255 NOT NULL
+- **COLUMN** id >> INT PK
+- **COLUMN** firstName >> VARCHAR 50
+- **COLUMN** lastName >> VARCHAR 50
+- **COLUMN** email >> VARCHAR 100 NOT NULL UNIQUE
+- **COLUMN** password >> VARCHAR 255 NOT NULL
 
-#### Orders
+#### Orders Table
 
-- id >> INT PK
-- id of each product in the order >> INT FK
-- quantity of each product in the order >> INT
-- user_id ref to the id of the user purchuased order >> INT FK
-- status of order (active or complete) >> VARCHAR 50
+- **COLUMN** id >> INT PK
+- **COLUMN** id of each product in the order >> INT FK
+- **COLUMN** quantity of each product in the order >> INT
+- **COLUMN** user_id ref to the id of the user purchuased order >> INT FK
+- **COLUMN** status of order (active or complete) >> VARCHAR 50

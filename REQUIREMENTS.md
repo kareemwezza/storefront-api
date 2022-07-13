@@ -31,23 +31,33 @@ All endpoints of this API will be exposed on `http://localhost:3000/api/v1/`.
 
 #### Products Table
 
-- **COLUMN** id >> INT PK
-- **COLUMN** name >> VARCHAR 255
-- **COLUMN** price >> INT
-- **COLUMN** [OPTIONAL] category >> VARCHAR 100
+------------------------------
+|    Column    |    type     |
+------------------------------
+|    id        |   INT PK    |
+|    name      | VARCHAR 255 |
+|    price     |    INT      |
+|    category  | VARCHAR 100 |
+------------------------------
 
 #### Users Table
 
-- **COLUMN** id >> INT PK
-- **COLUMN** firstName >> VARCHAR 50
-- **COLUMN** lastName >> VARCHAR 50
-- **COLUMN** email >> VARCHAR 100 NOT NULL UNIQUE
-- **COLUMN** password >> VARCHAR 255 NOT NULL
+--------------------------------
+|    Column      |    type     |
+--------------------------------
+|  id            |   INT PK    |
+|  firstName     | VARCHAR 50  |
+|  lastName      | VARCHAR 50  |
+|  email(UNIQUE) | VARCHAR 100 |
+|  password      | VARCHAR 255 |
+--------------------------------
 
 #### Orders Table
 
-- **COLUMN** id >> INT PK
-- **COLUMN** id of each product in the order >> INT FK
-- **COLUMN** quantity of each product in the order >> INT
-- **COLUMN** user_id ref to the id of the user purchuased order >> INT FK
-- **COLUMN** status of order (active or complete) >> VARCHAR 50
+--------------------------------
+|    Column      |    type     |
+--------------------------------
+|  id            |   INT PK    |
+|  user_id(FK)   |    INT      |
+|  status        | VARCHAR 50  |
+--------------------------------

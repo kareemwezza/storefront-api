@@ -61,3 +61,14 @@ All endpoints of this API will be exposed on `http://localhost:3000/api/v1/`.
 |  user_id(FK)   |    INT      |
 |  status        | VARCHAR 50  |
 --------------------------------
+
+#### Orders Products Table
+
+---------------------------------
+|    Column       |    type     |
+---------------------------------
+|  id             |   INT PK    |
+|  product_id(FK) |    INT      |
+|  order_id(FK)   |    INT      |
+|  quantity       | VARCHAR 50  |
+---------------------------------

@@ -1,0 +1,1 @@
+CREATE TABLE Products (id serial Primary Key, name varchar(255), price int, category varchar(100));
